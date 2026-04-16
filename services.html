@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Bristal Lane Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-detail-section { padding: var(--section-pad) 0; }
+    .service-detail-section:nth-child(even) { background: var(--grey-bg); }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .service-detail-grid.reverse { direction: rtl; }
+    .service-detail-grid.reverse > * { direction: ltr; }
+    .service-detail-header { margin-bottom: 24px; }
+    .service-detail-header .section-eyebrow { margin-bottom: 10px; }
+    .service-bullet-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .service-bullet-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .service-bullet-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .service-icon-large {
+      width: 80px; height: 80px;
+      color: var(--navy);
+      opacity: 0.12;
+      position: absolute;
+      right: 0; top: 0;
+    }
+    .service-detail-visual {
+      position: relative;
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 48px 40px;
+      color: var(--white);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .service-detail-visual .vis-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+    .service-detail-visual h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--white);
+    }
+    .service-detail-visual .vis-accent {
+      position: absolute;
+      top: 0; right: 0;
+      width: 120px; height: 120px;
+      background: rgba(201,168,76,0.15);
+      border-radius: 0 8px 0 100%;
+    }
+    @media (max-width: 1024px) {
+      .service-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-detail-grid.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-text">
+          <span class="logo-name">Bristal Lane Group</span>
+          <span class="logo-tagline">We are passionate about your success™</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://www.onvio.us" class="btn-login" target="_blank" rel="noopener">Client Portal</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="team.html">Team</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://www.onvio.us" class="mobile-login" target="_blank" rel="noopener">Client Portal</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Comprehensive Back-Office Solutions</p>
+      <h1 class="section-heading light">Our <em>Services</em></h1>
+      <p class="section-sub" style="color:rgba(255,255,255,0.8)">Tailored support across every area of your financial services firm — from startup through succession.</p>
+    </div>
+  </div>
+
+  <!-- TAX & ACCOUNTING -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-reveal>
+          <div class="service-detail-header">
+            <span class="section-eyebrow">Service Area 01</span>
+            <h2 class="section-heading">Tax &amp; <em>Accounting</em></h2>
+          </div>
+          <p class="body-copy">Customized accounting solutions that enable business owners to concentrate on clients, expand operations, and increase firm value. Our team handles the financial foundation so you can focus on what you do best.</p>
+          <ul class="service-bullet-list">
+            <li>Outsourced CFO services — financial statement preparation and regulatory report filing</li>
+            <li>Bookkeeping, bank reconciliations, and partner allocation reporting</li>
+            <li>Business formation: legal structure, operating agreements, IRS tax ID, and state filings</li>
+            <li>Federal and multi-state tax returns with IRS interface support</li>
+            <li>Tax planning — determining appropriate legal and tax structure</li>
+            <li>HR and payroll processing with benefits negotiation and employee onboarding</li>
+            <li>Client invoicing based on your billing model</li>
+            <li>Quarterly budget vs. actual assessments</li>
+          </ul>
+        </div>
+        <div class="service-detail-visual" data-reveal>
+          <div class="vis-accent"></div>
+          <p class="vis-eyebrow">Tax &amp; Accounting</p>
+          <h3>Financial clarity so you can focus on growth.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-detail-grid reverse">
+        <div class="service-detail-visual" data-reveal>
+          <div class="vis-accent"></div>
+          <p class="vis-eyebrow">Compliance</p>
+          <h3>Regulatory confidence — with experts in your corner.</h3>
+        </div>
+        <div data-reveal>
+          <div class="service-detail-header">
+            <span class="section-eyebrow">Service Area 02</span>
+            <h2 class="section-heading"><em>Compliance</em></h2>
+          </div>
+          <p class="body-copy">Our experienced compliance professionals serve as your named Chief Compliance Officer or support your existing CCO — providing the regulatory expertise your firm needs to operate with confidence.</p>
+          <ul class="service-bullet-list">
+            <li>Outsourced CCO — named Chief Compliance Officer with onsite regulatory inspection support</li>
+            <li>Annual Compliance Reports, quarterly management updates, and monthly committee reporting</li>
+            <li>Email monitoring and archiving solutions</li>
+            <li>Compliance program development and ongoing maintenance</li>
+            <li>Marketing material review and approval workflows</li>
+            <li>Access to independent legal professionals specializing in securities matters</li>
+            <li>FINRA, SEC, and state registration support for new firms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS ADMINISTRATION -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-reveal>
+          <div class="service-detail-header">
+            <span class="section-eyebrow">Service Area 03</span>
+            <h2 class="section-heading">Business <em>Administration</em></h2>
+          </div>
+          <p class="body-copy">A fully outsourced administrative infrastructure — from licensed CFO and FINOP services to HR, payroll, and employee management — so your firm runs smoothly without the overhead of a large internal team.</p>
+          <ul class="service-bullet-list">
+            <li>Fully outsourced and licensed CFO and/or FINOP services</li>
+            <li>Regulatory report preparation, transaction processing, and strategic planning</li>
+            <li>Client billing calculation and invoice management</li>
+            <li>Payroll processing and direct deposit administration</li>
+            <li>Benefits negotiation and ongoing administration</li>
+            <li>Employee onboarding and HR compliance</li>
+          </ul>
+        </div>
+        <div class="service-detail-visual" data-reveal>
+          <div class="vis-accent"></div>
+          <p class="vis-eyebrow">Business Administration</p>
+          <h3>The infrastructure of a large firm without the overhead.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUATION & SUCCESSION -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-detail-grid reverse">
+        <div class="service-detail-visual" data-reveal>
+          <div class="vis-accent"></div>
+          <p class="vis-eyebrow">Valuation &amp; Succession</p>
+          <h3>Know your worth while making key strategic decisions.</h3>
+        </div>
+        <div data-reveal>
+          <div class="service-detail-header">
+            <span class="section-eyebrow">Service Area 04</span>
+            <h2 class="section-heading">Valuation &amp; <em>Succession Planning</em></h2>
+          </div>
+          <p class="body-copy">With 75 combined years of industry expertise, our team helps financial services professionals understand the true value of their firm and plan confidently for the future — whether that means growth, transition, or legacy preservation.</p>
+          <ul class="service-bullet-list">
+            <li>Business examination and comprehensive financial analysis</li>
+            <li>Multi-scenario projections and fair market value determination</li>
+            <li>Performance metrics and indicator reporting</li>
+            <li>Customized succession roadmaps and exit strategy blueprints</li>
+            <li>Planning focused on practice continuity, employees, and legacy</li>
+            <li>Holistic business goal analysis and organizational assessment</li>
+            <li>Strategic and managerial consulting across the transition lifecycle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONS -->
+  <section class="service-detail-section">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-reveal>
+          <div class="service-detail-header">
+            <span class="section-eyebrow">Service Area 05</span>
+            <h2 class="section-heading"><em>Operations</em></h2>
+          </div>
+          <p class="body-copy">Our dedicated relationship managers oversee the day-to-day operational infrastructure of your firm — from client paperwork and reconciliation to custodian administration and reporting.</p>
+          <ul class="service-bullet-list">
+            <li>Client paperwork processing and workflow customization</li>
+            <li>Document imaging and records management</li>
+            <li>Daily reconciliation and exception reporting</li>
+            <li>Custodian administration and ongoing relationship management</li>
+            <li>Cost basis reconciliation for incoming securities</li>
+            <li>Basic reporting: realized gains/losses, estimated 1099 dividend information</li>
+            <li>Customized reporting solutions for your firm's unique needs</li>
+          </ul>
+        </div>
+        <div class="service-detail-visual" data-reveal>
+          <div class="vis-accent"></div>
+          <p class="vis-eyebrow">Operations</p>
+          <h3>Middle and back-office support built around your workflow.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS IMPROVEMENT + ORION + TRANSITIONS -->
+  <section class="services-section" style="background:var(--grey-bg);">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-eyebrow">Additional Services</span>
+        <h2 class="section-heading">More Ways We <em>Support You</em></h2>
+      </div>
+      <div class="services-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="service-card" data-reveal>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4"/><circle cx="24" cy="24" r="6"/>
+          </svg>
+          <h3>Process Improvement</h3>
+          <p>Workflow analysis and operational optimization to reduce friction, eliminate redundancy, and free your team for higher-value activities. We assess your current processes and implement practical improvements that scale with your growth.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="8" width="14" height="14" rx="2"/><rect x="26" y="8" width="14" height="14" rx="2"/><rect x="8" y="26" width="14" height="14" rx="2"/><rect x="26" y="26" width="14" height="14" rx="2"/>
+          </svg>
+          <h3>Orion Consulting</h3>
+          <p>Expert guidance on the Orion portfolio management platform — including implementation, customization, reporting configuration, and ongoing support. Our consultants help you maximize the value of your technology investment from day one.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 36l8-28 8 20 6-12 4 20"/><circle cx="12" cy="36" r="2" fill="currentColor"/><circle cx="20" cy="8" r="2" fill="currentColor"/>
+          </svg>
+          <h3>Transitions</h3>
+          <p>Comprehensive transition support for advisors moving to independence. We develop customized transition plans, facilitate custodian relationships, conduct asset reviews, manage client communications, and handle account onboarding end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner" data-reveal>
+        <h2>Ready to explore a <em>partnership?</em></h2>
+        <p>Contact us to see if Bristal Lane Group is the right partner for your business. We'd love to learn about your firm.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn-primary">Start The Conversation</a>
+          <a href="team.html" class="btn-outline">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-text">
+            <span class="logo-name">Bristal Lane Group</span>
+            <span class="logo-tagline">We are passionate about your success™</span>
+          </div>
+          <p>Providing comprehensive back-office solutions for independent financial services firms across the country.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="team.html">Team Members</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="https://www.onvio.us" target="_blank" rel="noopener">Client Portal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Tax &amp; Accounting</a>
+            <a href="services.html">Compliance</a>
+            <a href="services.html">Business Administration</a>
+            <a href="services.html">Valuation &amp; Succession</a>
+            <a href="services.html">Operations</a>
+          </div>
+          <div class="footer-col">
+            <h4>More Services</h4>
+            <a href="services.html">Process Improvement</a>
+            <a href="services.html">Orion Consulting</a>
+            <a href="services.html">Transitions</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy;2026 Bristal Lane Group. All Rights Reserved. 9000 Keystone Crossing, Indianapolis, IN 46240 &middot; 317-581-4003</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
