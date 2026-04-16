@@ -82,7 +82,7 @@ input, select, textarea { font-family: inherit; }
   margin-bottom: 20px;
 }
 .section-heading.light { color: var(--white); }
-.section-heading em { font-style: italic; color: var(--navy); }
+.section-heading em { font-style: italic; color: var(--crimson); }
 .section-heading.light em { color: var(--gold-light); }
 
 .section-sub {
@@ -227,7 +227,7 @@ input, select, textarea { font-family: inherit; }
 }
 .nav-links a:hover::after { width: 100%; }
 .site-header.scrolled .nav-links a { color: var(--text-dark); }
-.site-header.scrolled .nav-links a::after { background: var(--navy); }
+.site-header.scrolled .nav-links a::after { background: var(--crimson); }
 
 .nav-actions { display: flex; align-items: center; gap: 16px; }
 
@@ -497,7 +497,7 @@ input, select, textarea { font-family: inherit; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.75);
 }
-.trust-bar-inner .dot { color: var(--gold); opacity: 0.7; }
+.trust-bar-inner .dot { color: var(--crimson); opacity: 1; }
 
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -536,7 +536,7 @@ input, select, textarea { font-family: inherit; }
   border-bottom: 3px solid transparent;
   transition: border-color var(--transition), transform var(--transition);
 }
-.stat-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+.stat-card:hover { border-color: var(--crimson); transform: translateY(-2px); }
 .stat-card.accent { background: var(--navy); }
 .stat-card.accent .stat-number,
 .stat-card.accent .stat-label { color: var(--white); }
@@ -650,7 +650,7 @@ input, select, textarea { font-family: inherit; }
 .about-pillar { position: relative; }
 .pillar-line {
   width: 32px; height: 2px;
-  background: var(--gold);
+  background: var(--crimson);
   margin-bottom: 14px;
 }
 .about-pillar h4 {
@@ -716,7 +716,7 @@ input, select, textarea { font-family: inherit; }
 }
 .why-check {
   width: 28px; height: 28px;
-  background: var(--gold-light);
+  background: var(--crimson);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -726,7 +726,7 @@ input, select, textarea { font-family: inherit; }
 }
 .why-check svg {
   width: 14px; height: 14px;
-  color: var(--navy);
+  color: var(--white);
 }
 .why-list li strong {
   display: block;
