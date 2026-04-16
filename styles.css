@@ -18,6 +18,8 @@
   --blue-light: #5B9EC9;
   --gold:       #C9A84C;
   --gold-light: #E8CC87;
+  --crimson:    #822239;
+  --crimson-light: #a62d47;
   --charcoal:   #2D3142;
   --slate:      #4A5568;
   --grey-dark:  #3D4452;
@@ -66,7 +68,7 @@ input, select, textarea { font-family: inherit; }
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--crimson);
   margin-bottom: 14px;
 }
 .section-eyebrow.light { color: var(--gold-light); }
@@ -587,7 +589,7 @@ input, select, textarea { font-family: inherit; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--gold);
+  background: var(--crimson);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
