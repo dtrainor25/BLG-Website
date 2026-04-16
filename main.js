@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+  // ---- STICKY NAV ----
   const header = document.getElementById('site-header');
 
   function onScroll() {
@@ -14,6 +15,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // ---- MOBILE MENU ----
   const hamburger = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -29,18 +31,28 @@
     });
   }
 
-  const revealEls = document.querySelectorAll('[data-reveal]');
+  // ---- HERO PARALLAX ----
+  var heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      heroContent.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+    }, { passive: true });
+  }
+
+  // ---- SCROLL REVEAL ----
+  var revealEls = document.querySelectorAll('[data-reveal]');
   var revealObserver;
   if ('IntersectionObserver' in window) {
     revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            const siblings = Array.from(
+            var siblings = Array.from(
               entry.target.parentElement.querySelectorAll('[data-reveal]:not(.revealed)')
             );
-            const idx = siblings.indexOf(entry.target);
-            const delay = Math.min(idx * 100, 300);
+            var idx = siblings.indexOf(entry.target);
+            var delay = Math.min(idx * 100, 300);
             setTimeout(function () {
               entry.target.classList.add('revealed');
             }, delay);
@@ -55,24 +67,60 @@
     revealEls.forEach(function (el) { el.classList.add('revealed'); });
   }
 
+  // ---- COUNT-UP ANIMATION ----
+  function easeOutQuad(t) { return t * (2 - t); }
+
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1500;
+    var start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var current = Math.round(easeOutQuad(progress) * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  var countEls = document.querySelectorAll('[data-count]');
+  if (countEls.length && 'IntersectionObserver' in window) {
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(function (el) { countObserver.observe(el); });
+  }
+
+  // ---- SMOOTH SCROLL for anchor links ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
+      var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const offset = 76;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        var offset = 76;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
   });
 
-  const form = document.querySelector('.contact-form');
+  // ---- CONTACT FORM ----
+  var form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
+      var btn = form.querySelector('button[type="submit"]');
+      var originalText = btn.textContent;
       btn.textContent = 'Sending...';
       btn.disabled = true;
       setTimeout(function () {
@@ -90,6 +138,7 @@
     });
   }
 
+  // ---- IMAGE FALLBACKS ----
   document.querySelectorAll('img').forEach(function (img) {
     img.addEventListener('error', function () {
       this.style.display = 'none';
